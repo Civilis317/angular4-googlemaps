@@ -18,9 +18,6 @@ export class MapComponent implements OnInit {
   lng: number = 10;
   zoom: number = 3;
   map: any;
-  //  script: any;
-  //  src: string;
-
 
   constructor() {}
 
