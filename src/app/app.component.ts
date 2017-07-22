@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 
-import {MapComponent} from './map.component';
 import {environment} from '../environments/environment';
 
 @Component({

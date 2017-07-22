@@ -8,6 +8,7 @@ import {AppRoutingModule} from './app-routing.module';
 
 import {AppComponent} from './app.component';
 import {MapComponent} from './map.component';
+import {BrugComponent} from './brug.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import {MapComponent} from './map.component';
     FormsModule,
     AppRoutingModule
   ],
-  declarations: [AppComponent, MapComponent],
+  declarations: [AppComponent, MapComponent, BrugComponent],
   bootstrap: [AppComponent]
 })
 

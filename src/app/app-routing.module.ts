@@ -6,9 +6,11 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {AppComponent} from './app.component';
 import {MapComponent} from './map.component';
+import {BrugComponent} from './brug.component';
 
 const routes: Routes = [
-  {path: 'map', component: MapComponent}
+  {path: 'map', component: MapComponent},
+  {path: 'brug', component: BrugComponent}
 ];
 
 @NgModule({
