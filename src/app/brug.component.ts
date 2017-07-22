@@ -2,6 +2,7 @@
 * brug.component.ts
 */
 import {Component, OnInit} from '@angular/core';
+import {MapView} from './map';
 
 declare var google: any;
 
@@ -12,25 +13,22 @@ declare var google: any;
 })
 
 export class BrugComponent implements OnInit {
-  mapTitle: string = 'Schagerbrug';
-  lat: number = 52.810944;
-  lng: number = 4.740854;
-  zoom: number = 16;
+  mapView: MapView = new MapView(google);
   map: any;
 
   constructor() {}
 
   ngOnInit() {
-    // set map properties
-    const mapProp = {
-      center: new google.maps.LatLng(this.lat, this.lng),
-      zoom: this.zoom,
-      mapTypeId: google.maps.MapTypeId.TERRAIN
-      //      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
+    this.mapView.title = 'Schagerbrug';
+    this.mapView.lat = 52.810944;
+    this.mapView.lng = 4.740854;
+    this.mapView.zoom = 10;
+    this.mapView.init();
+    this.map = this.mapView.map;
+  }
 
-    // init map
-    this.map = new google.maps.Map(document.getElementById('map'), mapProp);
+  initialize() {
+    console.log('google api loaded')
   }
 
 }

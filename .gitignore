@@ -9,6 +9,7 @@
 
 # environment variables
 /src/environments/
+/src/env.js
 
 # IDEs and editors
 /.idea
