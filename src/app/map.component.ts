@@ -22,7 +22,6 @@ export class MapComponent implements OnInit {
   location: Location;
   title: string;
 
-
   constructor(private locationService: LocationService) {}
 
   ngOnInit() {

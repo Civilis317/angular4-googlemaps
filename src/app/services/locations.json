@@ -12,6 +12,13 @@
 		"title": "Schagerbrug",
 		"lat": 52.810944,
 		"lng": 4.740854,
-		"zoom": 13
+		"zoom": 16
+	},
+	{
+		"id": 3,
+		"title": "Amsterdamsebrug",
+		"lat": 52.365900,
+		"lng": 4.957342,
+		"zoom": 16
 	}
 ]

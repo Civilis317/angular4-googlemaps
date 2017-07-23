@@ -10,7 +10,7 @@ import {BrugComponent} from './brug.component';
 
 const routes: Routes = [
   {path: 'map', component: MapComponent},
-  {path: 'brug', component: BrugComponent}
+  {path: 'brug/:id', component: BrugComponent}
 ];
 
 @NgModule({
