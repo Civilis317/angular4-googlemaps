@@ -1,27 +1,28 @@
 /*
 * map.ts
 */
-export class MapView {
-  title: string;
-  lat: number;
-  lng: number;
-  zoom: number;
-  google: any
-  map: any;
-  type: string;
+import {Location} from './model/location.model';
 
-  constructor(google: any) {
+export class MapView {
+  google: any;
+  location: Location;
+  map: any;
+
+  constructor(google: any, location: Location) {
     this.google = google;
+    this.location = location;
+    this.init();
   }
 
-  init() {
-    if (!this.type) {
-      this.type = this.google.maps.MapTypeId.ROADMAP;
+  private init() {
+    let type;
+    if (!this.location.type) {
+      type = this.google.maps.MapTypeId.ROADMAP;
     }
     const mapProp = {
-      center: new this.google.maps.LatLng(this.lat, this.lng),
-      zoom: this.zoom,
-      mapTypeId: this.type
+      center: new this.google.maps.LatLng(this.location.lat, this.location.lng),
+      zoom: this.location.zoom,
+      mapTypeId: type
     };
 
     // init map

@@ -4,6 +4,9 @@
 import {Component, OnInit} from '@angular/core';
 import {MapView} from './map';
 
+import {Location} from './model/location.model';
+import {LocationService} from './services/location.service';
+
 declare var google: any;
 
 @Component({
@@ -13,22 +16,26 @@ declare var google: any;
 })
 
 export class BrugComponent implements OnInit {
-  mapView: MapView = new MapView(google);
+  mapView: MapView;
   map: any;
+  location: Location;
+  title: string;
 
-  constructor() {}
+  constructor(private locationService: LocationService) {}
 
   ngOnInit() {
-    this.mapView.title = 'Schagerbrug';
-    this.mapView.lat = 52.810944;
-    this.mapView.lng = 4.740854;
-    this.mapView.zoom = 10;
-    this.mapView.init();
-    this.map = this.mapView.map;
+    this.locationService.getLocationData()
+      .then((data: Location[]) => {
+        this.location = data[1];
+        this.mapView = new MapView(google, this.location);
+        this.map = this.mapView.map;
+        this.title = this.location.title;
+      })
+      .catch(this.handleError);
   }
 
-  initialize() {
-    console.log('google api loaded')
+  private handleError(error: any): void {
+    console.error('An error occurred', error);
   }
 
 }
