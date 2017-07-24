@@ -1,5 +1,5 @@
 /*
-* location.service.ts
+* map-config.service.ts
 */
 
 import {Injectable} from '@angular/core';
@@ -7,21 +7,21 @@ import {Http, Response} from '@angular/http';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/toPromise';
 
-import {Location} from '../model/location.model';
+import {MapConfiguration} from '../model/map-config.model';
 
 @Injectable()
-export class LocationService {
+export class MapConfigurationService {
   constructor(private http: Http) {}
 
   // a synchronous test function
   getData() {
-    return this.http.get("app/services/locations.json").map((response: Response) => <Location[]>response.json());
+    return this.http.get("app/services/map-configs.json").map((response: Response) => <MapConfiguration[]>response.json());
   }
 
-  getLocationData(): Promise<Location[]> {
-    return this.http.get('app/services/locations.json')
+  getConfigurations(): Promise<MapConfiguration[]> {
+    return this.http.get('app/services/map-configs.json')
       .toPromise()
-      .then(response => response.json() as Location[])
+      .then(response => response.json() as MapConfiguration[])
       .catch(this.handleError);
   }
 

@@ -1,4 +1,21 @@
+#divContainer {
+	background: white;
+	width: 1000px;
+	float: left;
+}
+
+.menuDiv {
+	background: white;
+	float: left;
+	width: 30%;
+}
+
+.portalDiv {
+	background: white;
+	float: left;
+	width: 45%;
+}
 
 #map {
-	height: 600px;
+	height: 300px;
 }

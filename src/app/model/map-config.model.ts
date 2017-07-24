@@ -1,7 +1,7 @@
 /*
-* location.model.ts
+* map-config.model.ts
 */
-export class Location {
+export class MapConfiguration {
   constructor(
     public id: number,
     public title: string,

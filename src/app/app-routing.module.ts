@@ -5,12 +5,12 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 import {AppComponent} from './app.component';
+import {EarthquakeComponent} from './earthquake.component';
 import {MapComponent} from './map.component';
-import {BrugComponent} from './brug.component';
 
 const routes: Routes = [
-  {path: 'map', component: MapComponent},
-  {path: 'brug/:id', component: BrugComponent}
+  {path: 'earthquakes', component: EarthquakeComponent},
+  {path: 'map/:id', component: MapComponent}
 ];
 
 @NgModule({

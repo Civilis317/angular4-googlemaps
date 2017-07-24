@@ -7,10 +7,10 @@ import {HttpModule} from '@angular/http';
 import {environment} from '../environments/environment';
 import {AppRoutingModule} from './app-routing.module';
 
-import {LocationService} from './services/location.service';
+import {MapConfigurationService} from './services/map-config.service';
 import {AppComponent} from './app.component';
+import {EarthquakeComponent} from './earthquake.component';
 import {MapComponent} from './map.component';
-import {BrugComponent} from './brug.component';
 
 @NgModule({
   imports: [
@@ -19,8 +19,8 @@ import {BrugComponent} from './brug.component';
     HttpModule,
     AppRoutingModule
   ],
-  declarations: [AppComponent, MapComponent, BrugComponent],
-  providers: [LocationService],
+  declarations: [AppComponent, EarthquakeComponent, MapComponent],
+  providers: [MapConfigurationService],
   bootstrap: [AppComponent]
 })
 
