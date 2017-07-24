@@ -1,10 +1,21 @@
 <h1>{{title}}</h1>
 
-<nav>
-  <a routerLink="/earthquakes">Earthquakes</a><br/>
-  <a routerLink="/map/1">Schagerbrug</a><br/>
-  <a routerLink="/map/2">Amsterdamsebrug</a>
-</nav>
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#/welcome">Home</a>
+    </div>
+    <ul class="nav navbar-nav">
+		<li *ngFor="let menuItem of menu.menuItemList;let i = index">
+		<a routerLink="{{menuItem.url}}">{{menuItem.name}}</a>
+		</li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li ng-show="menu.authenticated"><a href="#/"><span class="glyphicon glyphicon-user"></span> {{menu.displayName}}</a></li>
+      <li ng-hide="menu.authenticated"><a href="#/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li ng-hide="menu.authenticated"><a href="#/login?/menu"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav> 
 
 <router-outlet></router-outlet>
-
