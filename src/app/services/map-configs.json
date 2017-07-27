@@ -1,13 +1,5 @@
 [
 	{
-		"id": 1,
-		"title": "Earthquakes",
-		"lat": 20,
-		"lng": 10,
-		"zoom": 2,
-		"type": "google.maps.MapTypeId.TERRAIN"
-	},
-	{
 		"id": 2,
 		"title": "Schagerbrug",
 		"lat": 52.810944,

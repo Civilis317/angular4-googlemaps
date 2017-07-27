@@ -4,7 +4,6 @@
 import {Component, OnInit} from '@angular/core';
 import {GoogleMap} from './google-map';
 import {MapConfiguration} from './model/map-config.model';
-import {MapConfigurationService} from './services/map-config.service';
 
 import {EQ_DATA} from './mock-eq-data';
 
@@ -22,25 +21,25 @@ export class EarthquakeComponent implements OnInit {
   mapConfig: MapConfiguration;
   title: string;
 
-  constructor(private mapConfigService: MapConfigurationService) {}
+  constructor() {}
 
   ngOnInit() {
-    this.mapConfigService.getConfigurations()
-      .then((data: MapConfiguration[]) => {
-        this.mapConfig = data[0];
-        this.googleMap = new GoogleMap(this.mapConfig);
-        this.map = this.googleMap.map;
-        this.title = this.mapConfig.title;
+    this.mapConfig = {
+      "id": 1,
+      "title": "Earthquakes",
+      "lat": 20,
+      "lng": 10,
+      "zoom": 2,
+      "type": "google.maps.MapTypeId.TERRAIN"
+    };
 
-        // set style for data layer
-        this.map.data.setStyle(this.setFeature);
+    this.googleMap = new GoogleMap(this.mapConfig);
+    this.map = this.googleMap.map;
+    this.title = this.mapConfig.title;
 
-      })
-      .catch(this.handleError);
-  }
+    // set style for data layer
+    this.map.data.setStyle(this.setFeature);
 
-  private handleError(error: any): void {
-    console.error('An error occurred', error);
   }
 
   showEarthQuakes(): void {
