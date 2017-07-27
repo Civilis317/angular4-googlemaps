@@ -3,11 +3,18 @@
  <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">Home</a>
+      <a class="navbar-brand" routerLink="/">Home</a>
     </div>
     <ul class="nav navbar-nav">
-		<li *ngFor="let menuItem of menu.menuItemList; let i = index">
-		<a routerLink="{{menuItem.url}}">{{menuItem.name}}</a>
+		<li class="active"><a routerLink="/earthquakes">Earthquakes</a></li>
+		<li class="dropdown">
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#">Bruggen
+	        <span class="caret"></span></a>
+	        <ul class="dropdown-menu">
+				<li *ngFor="let menuItem of menu.menuItemList; let i = index">
+					<a routerLink="{{menuItem.url}}">{{menuItem.name}}</a>
+				</li>
+	        </ul>
 		</li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
@@ -18,3 +25,4 @@
 </nav> 
 
 <router-outlet></router-outlet>
+

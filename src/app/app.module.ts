@@ -4,6 +4,9 @@ import {FormsModule} from '@angular/forms'; // for ngModel!
 import {RouterModule} from '@angular/router';
 import {HttpModule} from '@angular/http';
 
+//import {BsDropdownModule} from 'ngx-bootstrap';
+//import {AlertModule} from 'ngx-bootstrap';
+
 import {environment} from '../environments/environment';
 import {AppRoutingModule} from './app-routing.module';
 
@@ -19,6 +22,8 @@ import {MapComponent} from './map.component';
     FormsModule,
     HttpModule,
     AppRoutingModule
+    //    BsDropdownModule.forRoot(),
+    //    AlertModule.forRoot()
   ],
   declarations: [AppComponent, EarthquakeComponent, MapComponent],
   providers: [MapConfigurationService, FeatureService],

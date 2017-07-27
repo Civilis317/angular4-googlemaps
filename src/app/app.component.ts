@@ -23,13 +23,13 @@ export class AppComponent implements OnInit {
   //    , "authenticated": false
   //  };
 
-
   constructor(
     private mapConfigService: MapConfigurationService,
   ) {}
 
   ngOnInit() {
-    let menuString: string = '{"menuItemList": [{"url": "/earthquakes", "name": "Earthquakes"},';
+    // build a string holding the menu definition, partly static, mostly dynamic from services/map-configs.json
+    let menuString: string = '{"menuItemList": [';
     this.mapConfigService.getConfigurations()
       .then((data: MapConfiguration[]) => {
         data.forEach(element => {
@@ -40,14 +40,10 @@ export class AppComponent implements OnInit {
         // remove last ',' to be able to call JSON.parse on the resultant string
         menuString = menuString.substring(0, menuString.length - 1);
         menuString += '], "displayName": "Not logged in", "authenticated": false}';
-
-        console.log(JSON.stringify(menuString))
         this.menu = JSON.parse(menuString);
       })
       .catch(this.handleError);
   };
-
-
 
   private handleError(error: any): void {
     console.error('An error occurred', error);
