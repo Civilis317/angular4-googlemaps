@@ -1,14 +1,16 @@
-<h3>{{title}}</h3>
-
 <div id="#divContainer">
-<div class="menuDiv">
-    <div>&nbsp;</div>
+	<div class="menuDiv">
+		<div>&nbsp;</div>
+	</div>
 
-</div>
-
-<div class="portalDiv">
-    <div id="map" ></div>
-</div>
+	<div class="portalDiv">
+		<h4>{{title}}</h4>
+		<button (click)="showFeatures()">Show Features</button>&nbsp;
+		<input type="checkbox" [(ngModel)]="showTraffic" (click)="toggleTraffic()" />Traffic&nbsp;
+		<input type="checkbox" [(ngModel)]="showTransit" (click)="toggleTransit()" />Transit&nbsp;
+		<input type="checkbox" [(ngModel)]="showBikeTraffic" (click)="toggleBikeTraffic()" />Bike traffic
+		<div id="map"></div>
+	</div>
 
 </div>
 

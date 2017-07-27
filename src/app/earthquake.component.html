@@ -1,7 +1,13 @@
-<h3>{{mapTitle}}</h3>
+<div id="#divContainer">
+	<div class="menuDiv">
+		<div>&nbsp;</div>
+	</div>
 
-<p>
-<button (click)="showEarthQuakes()">Show EarthQuakes</button>
-</p>
+	<div class="portalDiv">
+		<h4>{{title}}</h4>
+		<button (click)="showEarthQuakes()">Show EarthQuakes</button>&nbsp;
+		<div id="map"></div>
+	</div>
 
-<div id="map" ></div>
+</div>
+

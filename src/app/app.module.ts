@@ -8,6 +8,7 @@ import {environment} from '../environments/environment';
 import {AppRoutingModule} from './app-routing.module';
 
 import {MapConfigurationService} from './services/map-config.service';
+import {FeatureService} from './services/feature.service';
 import {AppComponent} from './app.component';
 import {EarthquakeComponent} from './earthquake.component';
 import {MapComponent} from './map.component';
@@ -20,7 +21,7 @@ import {MapComponent} from './map.component';
     AppRoutingModule
   ],
   declarations: [AppComponent, EarthquakeComponent, MapComponent],
-  providers: [MapConfigurationService],
+  providers: [MapConfigurationService, FeatureService],
   bootstrap: [AppComponent]
 })
 

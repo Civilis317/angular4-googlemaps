@@ -10,13 +10,12 @@ export class AppComponent {
 
   menu = {
     "menuItemList": [
-      {"url": "/earthquakes", "name": "Earthquakes"}
-      , {"url": "/map/1", "name": "Schagerbrug"}
-      , {"url": "/map/2", "name": "Amsterdamsebrug"}]
+      {"url": "/earthquakes", "name": "Earthquakes"},
+      {"url": "/map/2", "name": "Schagerbrug"},
+      {"url": "/map/3", "name": "Amsterdamsebrug"}
+    ]
     , "displayName": "Not logged in"
     , "authenticated": false
   };
-
-  menujson = JSON.stringify(this.menu.menuItemList);
 
 }

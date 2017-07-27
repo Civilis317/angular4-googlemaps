@@ -7,15 +7,16 @@
 .menuDiv {
 	background: white;
 	float: left;
-	width: 30%;
+	width: 10%;
 }
 
 .portalDiv {
 	background: white;
 	float: left;
-	width: 45%;
+	width: 90%;
 }
 
 #map {
-	height: 300px;
+	height: 350px;
+	border: 1px solid grey;
 }

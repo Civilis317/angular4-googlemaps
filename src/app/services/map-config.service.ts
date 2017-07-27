@@ -25,9 +25,15 @@ export class MapConfigurationService {
       .catch(this.handleError);
   }
 
+  getMapConfiguration(id: number): Promise<MapConfiguration> {
+    return this.getConfigurations().then(data => data.find(config => config.id === id));
+  }
+
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);
   }
+
+
 
 }

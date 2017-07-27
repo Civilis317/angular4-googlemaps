@@ -28,7 +28,7 @@ export class EarthquakeComponent implements OnInit {
     this.mapConfigService.getConfigurations()
       .then((data: MapConfiguration[]) => {
         this.mapConfig = data[0];
-        this.googleMap = new GoogleMap(google, this.mapConfig);
+        this.googleMap = new GoogleMap(this.mapConfig);
         this.map = this.googleMap.map;
         this.title = this.mapConfig.title;
 
