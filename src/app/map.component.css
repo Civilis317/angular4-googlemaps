@@ -13,10 +13,10 @@
 .portalDiv {
 	background: white;
 	float: left;
-	width: 90%;
+	width: 80%;
 }
 
 #map {
-	height: 350px;
+	height: 450px;
 	border: 1px solid grey;
 }
