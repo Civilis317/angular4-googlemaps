@@ -20,3 +20,8 @@
 	height: 450px;
 	border: 1px solid grey;
 }
+
+ul,li { list-style-type: none;
+        list-style-position:inside;
+        margin:0;
+        padding:0; }

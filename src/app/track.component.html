@@ -1,11 +1,17 @@
 <div id="#divContainer">
 	<div class="menuDiv">
 		<div>&nbsp;</div>
+		<button type="button" class="btn btn-primary" (click)="clearTrack()">Clear track</button>
+		<ul>
+		  <li *ngFor="let workout of workouts; let i = index;">
+		    <button type="button" class="btn btn-link" (click)="showTrackByDate(workout)">{{workout}}</button>
+		  </li>
+		</ul>
 	</div>
 
 	<div class="portalDiv">
 		<h4>{{title}}</h4>
-		<button (click)="showTrack()">Show Track</button>&nbsp;
+		
 		<div id="map"></div>
 	</div>
 	<div class="menuDiv">

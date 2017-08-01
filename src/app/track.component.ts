@@ -19,10 +19,13 @@ export class TrackComponent implements OnInit {
   map: any;
   mapConfig: MapConfiguration;
   title: string;
+  workouts: string[];
+  runPath: any;
 
   constructor(private gpxService: GpxService) {}
 
   ngOnInit() {
+    this.workouts = this.gpxService.getWorkouts();
     this.mapConfig = {
       "id": 0,
       "title": "Delftsehout",
@@ -41,34 +44,24 @@ export class TrackComponent implements OnInit {
     console.error('An error occurred', error);
   }
 
-  showTrack(): void {
-    this.gpxService.getGpxData()
+  showTrackByDate(workout: string) {
+    this.clearTrack();
+    this.gpxService.getGpxDataByDate(workout)
       .then(data => {
-        //console.log(data);
-        let latlngArray: any[] = [];
-        let lat: number;
-        let lon: string;
-        let parser = new DOMParser();
-        let xmlDoc: Document = parser.parseFromString(data, 'text/xml');
-        let trkseg: Element = xmlDoc.getElementsByTagName('trkseg')[0];
-        let nodeArray: Element[] = [].slice.call(trkseg.getElementsByTagName('trkpt'));
-        nodeArray.forEach(node => {
-          //          console.log(node);
-          lat = Number(node.attributes.getNamedItem('lat').value);
-          lon = node.attributes.getNamedItem('lon').value
-          latlngArray.push(new this.googleMap.google.maps.LatLng(lat, lon));
-
-          console.log('lat: ' + lat + ', lon: ' + lon)
-        });
-        let runPath = new this.googleMap.google.maps.Polyline({
-          path: latlngArray,
+        this.runPath = new this.googleMap.google.maps.Polyline({
+          path: data,
           strokeColor: "#FF0000",
           strokeOpacity: 0.8,
           strokeWeight: 2
         });
-        runPath.setMap(this.googleMap.map);
-
+        this.runPath.setMap(this.googleMap.map);
       })
-
   }
+
+  clearTrack() {
+    if (this.runPath) {
+      this.runPath.setMap(null);
+    }
+  }
+
 }
