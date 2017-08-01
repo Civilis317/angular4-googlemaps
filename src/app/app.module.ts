@@ -12,9 +12,12 @@ import {AppRoutingModule} from './app-routing.module';
 
 import {MapConfigurationService} from './services/map-config.service';
 import {FeatureService} from './services/feature.service';
+import {GpxService} from './services/gpx.service';
+
 import {AppComponent} from './app.component';
 import {EarthquakeComponent} from './earthquake.component';
 import {MapComponent} from './map.component';
+import {TrackComponent} from './track.component';
 
 @NgModule({
   imports: [
@@ -25,8 +28,8 @@ import {MapComponent} from './map.component';
     //    BsDropdownModule.forRoot(),
     //    AlertModule.forRoot()
   ],
-  declarations: [AppComponent, EarthquakeComponent, MapComponent],
-  providers: [MapConfigurationService, FeatureService],
+  declarations: [AppComponent, EarthquakeComponent, MapComponent, TrackComponent],
+  providers: [MapConfigurationService, FeatureService, GpxService],
   bootstrap: [AppComponent]
 })
 

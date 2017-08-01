@@ -1,7 +1,6 @@
 /*
-* map-config.service.ts
+* gpx.service.ts
 */
-
 import {Injectable} from '@angular/core';
 import {Http, Response} from '@angular/http';
 import 'rxjs/Rx';
@@ -10,28 +9,28 @@ import 'rxjs/add/operator/toPromise';
 import {MapConfiguration} from '../model/map-config.model';
 
 @Injectable()
-export class MapConfigurationService {
+export class GpxService {
+  private testdata = {
+    "club": "ajax",
+    "year": 1900
+  }
+
   constructor(private http: Http) {}
 
   // a synchronous test function
   getData() {
-    return this.http.get("app/services/map-configs.json").map((response: Response) => <MapConfiguration[]>response.json());
+    return this.testdata
   }
 
-  getConfigurations(): Promise<MapConfiguration[]> {
-    return this.http.get('app/services/map-configs.json')
+  getGpxData(): Promise<string> {
+    return this.http.get('app/services/gpx-20170723.gpx')
       .toPromise()
-      .then(response => response.json() as MapConfiguration[])
+      .then(response => response.text() as string)
       .catch(this.handleError);
-  }
-
-  getMapConfiguration(id: number): Promise<MapConfiguration> {
-    return this.getConfigurations().then(data => data.find(config => config.id === id));
   }
 
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);
   }
-
 }

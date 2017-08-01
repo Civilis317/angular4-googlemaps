@@ -6,7 +6,7 @@
       <a class="navbar-brand" routerLink="/">Home</a>
     </div>
     <ul class="nav navbar-nav">
-		<li class="active"><a routerLink="/earthquakes">Earthquakes</a></li>
+		<li class="{active: false}"><a routerLink="/earthquakes">Earthquakes</a></li>
 		<li class="dropdown">
 			<a class="dropdown-toggle" data-toggle="dropdown" href="#">Bruggen
 	        <span class="caret"></span></a>
@@ -16,6 +16,7 @@
 				</li>
 	        </ul>
 		</li>
+		<li class="{active: false}"><a routerLink="/runningTrack">Running</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li ng-show="menu.authenticated"><a href="#/"><span class="glyphicon glyphicon-user"></span> {{menu.displayName}}</a></li>

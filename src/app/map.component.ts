@@ -9,6 +9,7 @@ import {MapConfiguration} from './model/map-config.model';
 import {MapConfigurationService} from './services/map-config.service';
 import {FeatureService} from './services/feature.service';
 
+
 @Component({
   selector: 'map-component',
   templateUrl: './map.component.html',

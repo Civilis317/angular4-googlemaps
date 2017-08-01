@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 import {MapConfiguration} from './model/map-config.model';
 import {MapConfigurationService} from './services/map-config.service';
@@ -24,6 +25,7 @@ export class AppComponent implements OnInit {
   //  };
 
   constructor(
+    private route: ActivatedRoute,
     private mapConfigService: MapConfigurationService,
   ) {}
 
@@ -47,6 +49,11 @@ export class AppComponent implements OnInit {
 
   private handleError(error: any): void {
     console.error('An error occurred', error);
+  }
+
+  isActive(menuItem: any) {
+    console.log('menuItem: ' + menuItem)
+    console.log(this.route.toString)
   }
 
 }
