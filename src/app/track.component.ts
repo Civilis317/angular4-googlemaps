@@ -31,7 +31,7 @@ export class TrackComponent implements OnInit {
       "title": "Delftsehout",
       "lat": 52.02991114333533,
       "lng": 4.387482404708862,
-      "zoom": 13,
+      "zoom": 14,
       "type": "google.maps.MapTypeId.TERRAIN"
     };
 
@@ -48,6 +48,7 @@ export class TrackComponent implements OnInit {
     this.clearTrack();
     this.gpxService.getGpxDataByDate(workout)
       .then(data => {
+        console.log(data.length)
         this.runPath = new this.googleMap.google.maps.Polyline({
           path: data,
           strokeColor: "#FF0000",

@@ -1,10 +1,10 @@
 <div id="#divContainer">
 	<div class="menuDiv">
 		<div>&nbsp;</div>
-		<button type="button" class="btn btn-primary" (click)="clearTrack()">Clear track</button>
+		&nbsp;<button type="button" class="btn btn-primary" (click)="clearTrack()">Clear track</button>
 		<ul>
 		  <li *ngFor="let workout of workouts; let i = index;">
-		    <button type="button" class="btn btn-link" (click)="showTrackByDate(workout)">{{workout}}</button>
+		    &nbsp;<button type="button" class="btn btn-link" (click)="showTrackByDate(workout)">{{workout}}</button>
 		  </li>
 		</ul>
 	</div>

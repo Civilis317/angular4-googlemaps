@@ -28,6 +28,7 @@ export class GpxService {
     let workoutArray: string[] = [];
     workoutArray.push('20170723');
     workoutArray.push('20170730');
+    workoutArray.push('20170803');
     return workoutArray;
   }
 
